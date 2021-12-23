@@ -12,7 +12,7 @@ float scaledR, scaledG, scaledB;
 float minVal, maxVal, diff;
 float hue, sat, val;
 
-void setup(void) {
+void setup() {
   Serial.begin(9600);
 
   if (tcs.begin()) {
@@ -25,7 +25,7 @@ void setup(void) {
   }
 }
 
-void loop(void) {
+void loop() {
   tcs.getRawData(&r, &g, &b, &c);
   scaledR = 1.0 * r / maxR;
   scaledG = 1.0 * g / maxG;
@@ -36,12 +36,13 @@ void loop(void) {
   diff = maxVal - minVal;
 
   if (maxVal == scaledR) {
-    hue = 60.0 * ((scaledG - scaledB) / diff % 6.0);
+    hue = 60.0 * ((int)((scaledG - scaledB) / diff) % 6);
   } else if (maxVal == scaledG) {
     hue = 60.0 * ((scaledB - scaledR) / diff + 2.0);
   } else if (maxVal == scaledB) {
     hue = 60.0 * ((scaledR - scaledG) / diff + 4.0);
   }
 
-  Serial.print("Hue angle: ", hue);
+  Serial.print("Hue angle: ");
+  Serial.println(hue);
 }

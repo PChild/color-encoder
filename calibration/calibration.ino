@@ -31,7 +31,10 @@ void loop(void) {
     maxB = b;
   }
 
-  Serial.print("Max R: ", maxR);
-  Serial.print("Max G: ", maxG);
-  Serial.println("Max B: ", maxB);
+  Serial.print("Max R: ");
+  Serial.print(maxR);
+  Serial.print("Max G: ");
+  Serial.print(maxG);
+  Serial.println("Max B: ");
+  Serial.print(maxB);
 }
