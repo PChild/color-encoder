@@ -1,48 +1,69 @@
 <!DOCTYPE html>
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="favicon.ico">
 
-    <title>Color Encoder Wheel Generator</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-  </head>
+  <title>Color Encoder Wheel Generator</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
 
-  <body>
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark" style="margin-bottom: 1em;"><a class="navbar-brand" href="#">Color Wheel Generator</a></nav>
+<body>
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark" style="margin-bottom: 1em; padding-left: 0.5em;"><a
+      class="navbar-brand" href="#">Color Wheel Generator</a></nav>
 
-    <div class="container">
-      <div class="row marketing">
-        <div class="col-lg-6">
-          <h4>Color Wheel Settings</h4>
-          
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <h4>Color Wheel Settings</h4>
         <div class="form-group">
-            <label>Outer Diameter</label><input type="text" class="form-control" id="ringOD">
-            <label>Inner Diameter</label><input type="text" class="form-control"id="ringID">
-          <label>Paper Size</label>
-          <select class="form-control" id="paper-size">
-            <option value="letter">Letter</option>
-            <option value="a1">A1</option>
-            <option value="legal">Legal</option>
-          </select>
+          <div class="input-group mb-3">
+            <div class="form-floating form-floating-group flex-grow-1">
+              <input type="text" class="form-control" id="odInput" value="3.75" />
+              <label for="odInput">Outer Diameter</label>
+            </div>
+            <select class="units form-select form-control input-group-addon" id="odUnit">
+              <option>in</option>
+              <option>mm</option>
+            </select>
+          </div>
+          <div class="input-group mb-3">
+            <div class="form-floating form-floating-group flex-grow-1">
+              <input type="text" class="form-control" id="idInput" value="3" />
+              <label for="odInput">Inner Diameter</label>
+            </div>
+            <select class="units form-select form-control input-group-addon" id="idUnit">
+              <option>in</option>
+              <option>mm</option>
+            </select>
+          </div>
+          <div class="form-floating">
+            <select class="form-select" id="papersize">
+              <option>Letter</option>
+              <option>Legal</option>
+              <option>A1</option>
+              <option>A2</option>
+            </select>
+            <label for="papersize" class="form-label">Paper Size</label>
+          </div>
+          <button type="button" class="btn btn-primary mt-4" id="generate">Generate PDF</button>
         </div>
-        <button type="button" class="btn btn-primary">Generate PDF</button>
       </div>
       <div class="col-lg-1"></div>
-        <div class="col-lg-5">
-          <canvas height="300" id="viz" width="300"></canvas>
-
+      <div class="col-lg-5">
+        <canvas height="300" id="viz" width="300"></canvas>
         <canvas height="3000" id="ring" width="3000"></canvas>
       </div>
-    </div> 
-  
+    </div>
 
     <script src="js/jquery-3.3.1.slim.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jspdf.umd.min.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>

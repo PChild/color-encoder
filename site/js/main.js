@@ -25,8 +25,8 @@ $(() => {
 
                 // Figure out the starting index of this pixel in the image data array.
                 let rowLength = 2 * radius;
-                let adjustedX = x + radius; // convert x from [-50, 50] to [0, 100] (the coordinates of the image data array)
-                let adjustedY = y + radius; // convert y from [-50, 50] to [0, 100] (the coordinates of the image data array)
+                let adjustedX = x + radius;
+                let adjustedY = y + radius;
                 let pixelWidth = 4; // each pixel requires 4 slots in the data array
                 let index = (adjustedX + adjustedY * rowLength) * pixelWidth;
 
@@ -61,6 +61,18 @@ $(() => {
 
     drawCircle(vizCtx);
 });
+
+$('#generate').on('click', function (event) {
+    event.preventDefault(); // To prevent following the link (optional)
+    buildPDF();
+});
+
+function buildPDF() {
+    var doc = new jspdf.jsPDF();
+    doc.text("Hello world!", 10, 10);
+    doc.save("a4.pdf");
+
+}
 
 // hue in range [0, 360]
 // saturation, value in range [0,1]

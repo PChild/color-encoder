@@ -1,8 +1,17 @@
 body {
-    overflow-y: hidden;
+  overflow-y: hidden;
 }
 
 canvas {
-    margin-top: 1em;
-    margin-bottom: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.form-floating-group input {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.units {
+  max-width: 5em;
 }
