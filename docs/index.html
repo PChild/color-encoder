@@ -23,7 +23,7 @@
         <div class="form-group">
           <div class="input-group mb-3">
             <div class="form-floating form-floating-group flex-grow-1">
-              <input type="text" class="form-control" id="odInput" value="3.75" />
+              <input type="text" class="form-control" id="odInput" value="4" />
               <label for="odInput">Outer Diameter</label>
             </div>
             <select class="units form-select form-control input-group-addon" id="odUnit">
@@ -47,16 +47,19 @@
               <option>Legal</option>
               <option>A1</option>
               <option>A2</option>
+              <option>A3</option>
             </select>
             <label for="papersize" class="form-label">Paper Size</label>
           </div>
-          <button type="button" class="btn btn-primary mt-4" id="generate">Generate PDF</button>
+          <button type="button" class="btn btn-primary mt-4" id="generate">
+            Generate PDF
+          </button>
         </div>
       </div>
       <div class="col-lg-1"></div>
       <div class="col-lg-5">
         <canvas height="300" id="viz" width="300"></canvas>
-        <canvas height="3000" id="ring" width="3000"></canvas>
+        <canvas height="3000" id="ring" width="3000" style="visibility: hidden"></canvas>
       </div>
     </div>
 
